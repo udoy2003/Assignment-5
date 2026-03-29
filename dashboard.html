@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- tailwindcss -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <!-- daisyUi -->
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- fontawewsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+   
+<!-- NAVBAR -->
+<div class="bg-white px-6 py-4 flex justify-between items-center shadow-sm">
+  <div class="flex justify-center items-center gap-2">
+    <img src="./assets/github-logo.png" alt="" class="mx-auto">
+  <h2 class="text-xl font-bold">Issue Tracker</h2>
+  </div>
+
+  <div class="flex gap-2">
+    <input id="searchInput" type="text" placeholder="Search issues..."
+      class="border px-3 py-2 rounded-lg text-sm w-52">
+    <button onclick="searchIssues()"
+      class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm">
+      Search
+    </button>
+  </div>
+</div>
+   
+</body>
+</html>
