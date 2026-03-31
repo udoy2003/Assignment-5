@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- tailwindcss -->
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-     <!-- daisyUi -->
-      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <!-- fontawewsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-   
+
+<body class="bg-[#f5f7fb]">
+
 <!-- NAVBAR -->
 <div class="bg-white px-6 py-4 flex justify-between items-center shadow-sm">
   <div class="flex justify-center items-center gap-2">
     <img src="./assets/github-logo.png" alt="" class="mx-auto">
-  <h2 class="text-xl font-bold">Issue Tracker</h2>
+  <h2 class="text-xl font-bold">GitHub Issues Tracker</h2>
   </div>
 
   <div class="flex gap-2">
     <input id="searchInput" type="text" placeholder="Search issues..."
       class="border px-3 py-2 rounded-lg text-sm w-52">
     <button onclick="searchIssues()"
-      class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm">
-      Search
+      class="bg-purple-600 text-white px-4 py-2 rounded-lg text-lg flex items-center gap-1">
+      <div> <img src="./assets/Vector.png" alt=""></div>
+      <div>New Issues</div>
     </button>
   </div>
 </div>
- 
- 
+
 <!-- TABS -->
 <div class="p-6 ">
   <div class="bg-white p-4 rounded-xl shadow-sm flex gap-2">
@@ -49,8 +43,6 @@
     </button>
   </div>
 </div>
-   
-
 
 <!-- HEADER -->
 <div class="px-6">
@@ -79,33 +71,80 @@
   </div>
 </div>
 
-
-<!-- loader -->
+<!-- LOADER -->
 <div id="loader" class="text-center mt-6 hidden text-gray-500">
   Loading issues...
 </div>
 
-<!-- grid -->
+<!-- GRID -->
 <div id="issuesContainer"
   class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 </div>
+<!-- MODAL -->
+<div id="modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
 
-<!-- modal -->
-<div id="modal" class="fixed inset-0 bg-black/40 hidden justify-center items-center">
-  <div class="bg-white w-[400px] rounded-xl p-5 relative">
-    <button onclick="closeModal()" class="absolute top-2 right-3 text-gray-400 text-xl">×</button>
+  <div class="bg-white w-[500px] rounded-xl p-6 shadow-lg relative">
 
-    <h2 id="modalTitle" class="text-lg font-bold mb-2"></h2>
-    <p id="modalDesc" class="text-sm text-gray-600 mb-3"></p>
+    <!-- Title -->
+    <h2 id="modalTitle" class="text-xl font-bold mb-2"></h2>
 
-    <div class="text-sm space-y-1">
-      <p><b>Author:</b> <span id="modalAuthor"></span></p>
-      <p><b>Priority:</b> <span id="modalPriority"></span></p>
-      <p><b>Label:</b> <span id="modalLabel"></span></p>
-      <p><b>Created:</b> <span id="modalDate"></span></p>
+    <!-- Status + meta -->
+    <div class="flex items-center gap-2 text-sm mb-3">
+      <span id="modalStatus"
+        class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-600">
+        Opened
+      </span>
+
+      <span class="text-gray-400">•</span>
+
+      <span class="text-gray-500">
+        Opened by <span id="modalAuthor"></span>
+      </span>
+
+      <span class="text-gray-400">•</span>
+
+      <span id="modalDate" class="text-gray-500"></span>
     </div>
+
+    <!-- Labels -->
+    <div class="flex gap-2 mb-4">
+      <span class="text-xs bg-red-100 text-red-500 px-2 py-1 rounded-full">
+        BUG
+      </span>
+      <span class="text-xs bg-yellow-100 text-yellow-600 px-2 py-1 rounded-full">
+        HELP WANTED
+      </span>
+    </div>
+
+    <!-- Description -->
+    <p id="modalDesc" class="text-gray-600 text-sm mb-5"></p>
+
+    <!-- Bottom section -->
+    <div class="bg-gray-50 p-4 rounded-lg flex justify-between items-center mb-5">
+      <div>
+        <p class="text-xs text-gray-400">Assignee:</p>
+        <p id="modalAssignee" class="text-sm font-semibold"></p>
+      </div>
+
+      <div class="text-right">
+        <p class="text-xs text-gray-400">Priority:</p>
+        <span id="modalPriority"
+          class="text-xs px-3 py-1 rounded-full bg-red-500 text-white">
+          HIGH
+        </span>
+      </div>
+    </div>
+
+    <!-- Close button -->
+    <div class="text-right">
+      <button onclick="closeModal()"
+        class="bg-purple-600 text-white px-5 py-2 rounded-lg">
+        Close
+      </button>
+    </div>
+
   </div>
 </div>
- <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

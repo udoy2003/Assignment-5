@@ -1,0 +1,26 @@
+1.. Var :
+পুনরায় declare করা যায়
+Let :
+পুনরায় ভ্যালু আপডেট করা যায়
+Const:
+পুনরায় ভ্যালু আপডেট করা যায় না 
+
+
+2.
+Spread operator :
+Array /object এর element গুলো ছড়িয়ে দেয়া যায়, merge করা যায় 
+
+3.
+Map vs filter vs forEach:
+Map নতুন array return করে
+
+Filter শত অনুযায়ী element বেছে দেয়
+ForEach loop চালায়..
+
+4.
+Arrow function :
+সহজে ফাংশন লেখার syntax
+() =>{}
+5.
+Template literal:
+Back tick ব্যবহার করে ${} এর মধ্যে variable বসানো যায়
