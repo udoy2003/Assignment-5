@@ -104,20 +104,19 @@ function openModal(issue) {
   modal.classList.remove("hidden");
   modal.classList.add("flex");
 
-  // Title & description
+
   document.getElementById("modalTitle").innerText = issue.title;
   document.getElementById("modalDesc").innerText = issue.description;
 
-  // Author & date
+
   document.getElementById("modalAuthor").innerText = issue.author;
   document.getElementById("modalDate").innerText =
     new Date(issue.createdAt).toLocaleDateString();
 
-  // Assignee (same as author if not given)
   document.getElementById("modalAssignee").innerText =
     issue.assignee || issue.author;
 
-  // Status
+ 
   const statusEl = document.getElementById("modalStatus");
   if (issue.status === "open") {
     statusEl.innerText = "Opened";
@@ -129,7 +128,7 @@ function openModal(issue) {
       "px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-600";
   }
 
-  // Priority badge
+
   const priorityEl = document.getElementById("modalPriority");
 
   if (issue.priority === "HIGH") {

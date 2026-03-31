@@ -8,7 +8,7 @@
 
 <body class="bg-[#f5f7fb]">
 
-<!-- NAVBAR -->
+
 <div class="bg-white px-6 py-4 flex justify-between items-center shadow-sm">
   <div class="flex justify-center items-center gap-2">
     <img src="./assets/github-logo.png" alt="" class="mx-auto">
@@ -17,7 +17,7 @@
 
   <div class="flex gap-2">
     <input id="searchInput" type="text" placeholder="Search issues..."
-      class="border px-3 py-2 rounded-lg text-sm w-52">
+      class="border px-3 py-2 rounded-lg text-sm w-10 sm:w-20">
     <button onclick="searchIssues()"
       class="bg-purple-600 text-white px-4 py-2 rounded-lg text-lg flex items-center gap-1">
       <div> <img src="./assets/Vector.png" alt=""></div>
@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<!-- TABS -->
+
 <div class="p-6 ">
   <div class="bg-white p-4 rounded-xl shadow-sm flex gap-2">
     <button onclick="setActiveTab('all')" id="allTab"
@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<!-- HEADER -->
+
 <div class="px-6">
   <div class="bg-white rounded-xl shadow-sm p-5 flex justify-between items-center">
 
@@ -71,24 +71,23 @@
   </div>
 </div>
 
-<!-- LOADER -->
+
 <div id="loader" class="text-center mt-6 hidden text-gray-500">
   Loading issues...
 </div>
 
-<!-- GRID -->
+
 <div id="issuesContainer"
   class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 </div>
-<!-- MODAL -->
+
 <div id="modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
 
   <div class="bg-white w-[500px] rounded-xl p-6 shadow-lg relative">
 
-    <!-- Title -->
     <h2 id="modalTitle" class="text-xl font-bold mb-2"></h2>
 
-    <!-- Status + meta -->
+
     <div class="flex items-center gap-2 text-sm mb-3">
       <span id="modalStatus"
         class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-600">
@@ -116,10 +115,10 @@
       </span>
     </div>
 
-    <!-- Description -->
+  
     <p id="modalDesc" class="text-gray-600 text-sm mb-5"></p>
 
-    <!-- Bottom section -->
+    
     <div class="bg-gray-50 p-4 rounded-lg flex justify-between items-center mb-5">
       <div>
         <p class="text-xs text-gray-400">Assignee:</p>
@@ -135,7 +134,7 @@
       </div>
     </div>
 
-    <!-- Close button -->
+    
     <div class="text-right">
       <button onclick="closeModal()"
         class="bg-purple-600 text-white px-5 py-2 rounded-lg">
