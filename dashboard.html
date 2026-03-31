@@ -78,5 +78,33 @@
 
   </div>
 </div>
+
+
+<!-- loader -->
+<div id="loader" class="text-center mt-6 hidden text-gray-500">
+  Loading issues...
+</div>
+
+<!-- grid -->
+<div id="issuesContainer"
+  class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+</div>
+
+<!-- modal -->
+<div id="modal" class="fixed inset-0 bg-black/40 hidden justify-center items-center">
+  <div class="bg-white w-[400px] rounded-xl p-5 relative">
+    <button onclick="closeModal()" class="absolute top-2 right-3 text-gray-400 text-xl">×</button>
+
+    <h2 id="modalTitle" class="text-lg font-bold mb-2"></h2>
+    <p id="modalDesc" class="text-sm text-gray-600 mb-3"></p>
+
+    <div class="text-sm space-y-1">
+      <p><b>Author:</b> <span id="modalAuthor"></span></p>
+      <p><b>Priority:</b> <span id="modalPriority"></span></p>
+      <p><b>Label:</b> <span id="modalLabel"></span></p>
+      <p><b>Created:</b> <span id="modalDate"></span></p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
