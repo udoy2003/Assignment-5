@@ -14,3 +14,28 @@ function login() {
     alert("Wrong username");
   }
 }
+
+async function searchIssues() {
+  const text = document.getElementById("searchInput").value;
+
+  toggleLoader(true);
+
+  const res = await fetch(`${BASE_URL}/issues/search?q=${text}`);
+  const data = await res.json();
+
+  displayIssues(data.data);
+  toggleLoader(false);
+}
+
+
+function setActiveTab(type) {
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.classList.remove("bg-purple-600", "text-white");
+    btn.classList.add("bg-gray-100");
+  });
+
+  const active = document.getElementById(type + "Tab");
+  active.classList.add("bg-purple-600", "text-white");
+
+  loadIssues(type);
+}
